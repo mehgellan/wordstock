@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.confirm(user_params)
     # handles bug if User.confirm returns false
     if @user && @user.valid?
-      flash[:notice] = "Successfully logged in, #{@user.first_name}"
+      flash[:notice] = "Successfully logged in, welcome #{@user.first_name}!"
       login(@user)
       redirect_to user_path(@user)
     else
@@ -16,7 +16,13 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
-  
+
+  def destroy
+    flash[:success] = "Successfully logged out, come back soon #{current_user.first_name}!"
+    logout
+    redirect_to root_path
+  end
+
   private
 
     def user_params

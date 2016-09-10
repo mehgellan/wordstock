@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
+
   def new
     @user = User.new
   end
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     new_user = User.new(user_params)
     if new_user.save
       flash[:notice] = "Successfully signed in!"
+      login(@user)
       redirect_to user_path(new_user)
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
