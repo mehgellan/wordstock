@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'
   post '/users/:user_id/topics' => 'topics#create'
   get '/topics/:id' => 'topics#show', as: 'topic'
+  get '/topics/:id/edit' => 'topics#edit', as: 'edit_topic'
+  patch '/topics/:id' => 'topics#update'
+  delete '/topics/:id' => 'topics#destroy'
 
 end

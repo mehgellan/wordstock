@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:index, :new, :create, :show]
+  before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   # before_action :require_ownership!, only: [:edit, :update, :destroy]
 
@@ -25,7 +25,25 @@ class TopicsController < ApplicationController
   end
 
   def show
+    render :show
   end
+
+  def edit
+    render :edit
+  end
+
+  def update
+    @topic.update(topic_params)
+    flash[:notice] = "Topic updated successfully"
+    redirect_to topic_path(@topic)
+  end
+
+  def destroy
+    @topic.destroy
+    flash[:notice] = "Your topic was successfully deleted"
+    redirect_to new_user_topic_path(@topic.user_id)
+  end
+
 
   private
 
