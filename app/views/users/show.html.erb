@@ -5,5 +5,8 @@
 <div>
   <h2><%= @user.first_name %>'s Topics</h2>
   <ul>
+    <% @user.topics.each do |topic| %>
+    <li><%= topic.name %></li>
+    <% end %>
   </ul>
 </div>

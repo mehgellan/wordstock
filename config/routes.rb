@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   get "/login" => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
   post '/sessions' => 'sessions#create'
+
+  get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
+
 end
