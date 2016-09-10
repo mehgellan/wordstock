@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'users#new'
+  root to: 'users#show'
   get '/signin' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show', as: 'user'
@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get "/login" => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
   post '/sessions' => 'sessions#create'
+
+  get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
+  get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'
+  post '/users/:user_id/topics' => 'topics#create'
+
 end
