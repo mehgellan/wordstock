@@ -1,4 +1,3 @@
-<h1>Add a New Topic</h1>
 <%= form_for :topic, url: user_topics_path(@user) do |f| %>
   <%= f.text_field :name, placeholder: "Topic Name" %>
   <%= f.submit "Add Topic" %>

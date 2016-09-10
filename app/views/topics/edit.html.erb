@@ -1,0 +1,4 @@
+<%= form_for :topic, url: topic_path(@topic), method: :patch do |f| %>
+  <%= f.text_field :name, placeholder: "Topic Name" %>
+  <%= f.submit "Save Changes" %>
+<% end %>

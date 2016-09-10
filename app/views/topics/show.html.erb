@@ -1,0 +1,23 @@
+<h1><%= @topic.name %></h1>
+<div><%= link_to "Edit Topic", edit_topic_path(@topic) %></div>
+<div><%= link_to "Delete Topic", topic_path(@topic), method: :delete, data: { confirm: "Are you sure you want to delete this topic?" } %></div>
+<hr>
+<div>
+  <h3>Word List</h3>
+  <%= link_to "Add Word" %>
+  <br>
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>Part of Speech</th>
+      <th>Definition</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>Cronenbergs</td>
+      <td>n.</td>
+      <td>A grotestque creation</td>
+      <td>"..."</td>
+    </tr>
+  </table>
+</div>
