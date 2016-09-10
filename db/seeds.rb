@@ -1,4 +1,4 @@
-
+require 'ffaker'
 
 5.times do
  User.create(
