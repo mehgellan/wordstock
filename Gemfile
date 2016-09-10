@@ -25,7 +25,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+# emmet html templating
+gem 'emmett', '~> 0.0.3'
+# ffaker seed Database
+gem 'ffaker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -33,6 +37,11 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'spring'
 end
 
 group :development do
