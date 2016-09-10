@@ -37,6 +37,11 @@ gem 'ffaker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'spring'
 end
 
 group :development do
