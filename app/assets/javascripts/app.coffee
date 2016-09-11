@@ -1,0 +1,3 @@
+wordstock = angular.module('wordstock', [
+
+])

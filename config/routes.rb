@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'users#new'
+  root to: 'home#index'
   get '/signin' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show', as: 'user'
