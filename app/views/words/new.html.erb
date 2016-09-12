@@ -1,0 +1,6 @@
+<%= form_for :word, url: topic_words_path(@topic) do |f| %>
+  <%= f.text_field :term, placeholder: "Term" %>
+  <%= f.text_field :pos, placeholder: 'Part of Speech' %>
+  <%= f.text_field :definition, placeholder: 'Definition' %>
+  <%= f.submit "Add word" %>
+<% end %>

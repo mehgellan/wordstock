@@ -47,6 +47,10 @@ class TopicsController < ApplicationController
 
   private
 
+    def set_topic
+      @topic = Topic.find_by_id(params[:id])
+    end
+
     def set_user
       @user = User.find_by_id(params[:user_id])
     end

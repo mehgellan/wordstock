@@ -4,7 +4,7 @@
 <hr>
 <div>
   <h3>Word List</h3>
-  <%= link_to "Add Word" %>
+  <%= link_to "Add Word", new_topic_word_path(@topic) %>
   <br>
   <table>
     <tr>
@@ -18,6 +18,13 @@
       <td>n.</td>
       <td>A grotestque creation</td>
       <td>"..."</td>
+    </tr>
+    <tr>
+    <% @topic.words.each do |word|  %>
+      <td><%= word.term %></td>
+      <td><%= word.pos %></td>
+      <td><%= word.definition %></td>
+    <% end %>  
     </tr>
   </table>
 </div>
