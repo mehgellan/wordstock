@@ -4,7 +4,7 @@
 <hr>
 <div>
   <h3>Word List</h3>
-  <%= link_to "Add Word" %>
+  <%= link_to "Add Word", new_topic_word_path(@topic) %>
   <br>
   <table>
     <tr>
@@ -14,10 +14,13 @@
       <th>Example</th>
     </tr>
     <tr>
-      <td>Cronenbergs</td>
-      <td>n.</td>
-      <td>A grotestque creation</td>
-      <td>"..."</td>
+    <% @topic.words.each do |word|  %>
+      <%= link_to "Edit Word", edit_word_path(word) %>
+      <td><%= link_to "#{word.term}", word_path(word) %></td>
+      <td><%= word.pos %></td>
+      <td><%= word.definition %></td>
+      <%= link_to "Delete Word", word_path(word), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+    <% end %>
     </tr>
   </table>
 </div>
