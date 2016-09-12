@@ -4,22 +4,13 @@
 <hr>
 <div>
   <h3>Word List</h3>
-  <%= link_to "Add Word", new_topic_word_path(@topic) %>
+  <%= link_to "Add Word", new_topic_word_path(@topic), remote: true, class: "new-word-button" %>
   <br>
   <table>
-    <tr>
-      <th>Term</th>
-      <th>Part of Speech</th>
-      <th>Definition</th>
-      <th>Example</th>
-    </tr>
-    <tr>
+    <!-- FIXME: new word appends only on refresh -->
+    <tr class="my-words">
     <% @topic.words.each do |word|  %>
-      <%= link_to "Edit Word", edit_word_path(word) %>
-      <td><%= link_to "#{word.term}", word_path(word) %></td>
-      <td><%= word.pos %></td>
-      <td><%= word.definition %></td>
-      <%= link_to "Delete Word", word_path(word), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+    <%= render word %>
     <% end %>
     </tr>
   </table>

@@ -1,0 +1,9 @@
+<%= div_for word do %>
+  <h3><%= link_to "#{word.term}", word_path(word) %></h3>
+  <p><%= word.pos %></p>
+  <p><%= word.definition %></p>
+  <ul>
+   <li><%= link_to "Edit Word", edit_word_path(word), remote: true %></li>
+   <li><%= link_to "Delete Word", word_path(word), method: :delete, data: { confirm: "Are you sure you want to delete?"}, remote: true %></li>
+  </ul>
+<% end %>

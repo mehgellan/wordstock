@@ -1,0 +1,5 @@
+$(document).ready(function() {
+  $('form').hide();
+  $('.my-words').append('<%= j render partial: word, locals: {word: @word} %>');
+  $('.new-word-button').show();
+});
