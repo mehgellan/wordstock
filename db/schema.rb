@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910193334) do
+ActiveRecord::Schema.define(version: 20160912170657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,5 +31,16 @@ ActiveRecord::Schema.define(version: 20160910193334) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "words", force: :cascade do |t|
+    t.string   "term"
+    t.string   "pos"
+    t.string   "definition"
+    t.integer  "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_words_on_topic_id", using: :btree
+  end
+
   add_foreign_key "topics", "users"
+  add_foreign_key "words", "topics"
 end

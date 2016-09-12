@@ -1,0 +1,7 @@
+<h1>Edit Word</h1>
+<%= form_for :word, url: word_path(@word), method: :patch do |f| %>
+  <%= f.text_field :term, placeholder: "Term" %>
+  <%= f.text_field :pos, placeholder: 'Part of Speech' %>
+  <%= f.text_area :definition, placeholder: 'Definition' %>
+  <%= f.submit %>
+<% end %>

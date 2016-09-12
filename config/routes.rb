@@ -19,4 +19,12 @@ Rails.application.routes.draw do
   patch '/topics/:id' => 'topics#update'
   delete '/topics/:id' => 'topics#destroy'
 
+  get '/topics/:topic_id/words' => 'words#index', as: 'topic_words'
+  get '/topics/:topic_id/words/new' => 'words#new', as: 'new_topic_word'
+  post '/topics/:topic_id/words' => 'words#create'
+  get '/words/:id' => 'words#show', as: 'word'
+  get '/words/:id/edit' => 'words#edit', as: 'edit_word'
+  patch '/words/:id' => 'words#update'
+  delete '/words/:id' => 'words#destroy'
+
 end
