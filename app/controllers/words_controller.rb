@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_topic, only: [:index, :new, :create]
+  before_action :set_word, only: [:show, :edit, :update, :delete]
 
   def index
     @words = Word.all
@@ -22,10 +23,18 @@ class WordsController < ApplicationController
     end
   end
 
+  def show
+    render :show
+  end
+
   private
 
     def set_topic
       @topic = Topic.find_by_id(params[:topic_id])
+    end
+
+    def set_word
+      @word = Word.find_by_id(params[:id])
     end
 
     def word_params

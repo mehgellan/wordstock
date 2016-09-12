@@ -14,17 +14,13 @@
       <th>Example</th>
     </tr>
     <tr>
-      <td>Cronenbergs</td>
-      <td>n.</td>
-      <td>A grotestque creation</td>
-      <td>"..."</td>
-    </tr>
-    <tr>
     <% @topic.words.each do |word|  %>
-      <td><%= word.term %></td>
+      <%= link_to "Edit Word" %>
+      <td><%= link_to "#{word.term}", word_path(word) %></td>
       <td><%= word.pos %></td>
       <td><%= word.definition %></td>
-    <% end %>  
+      <%= link_to "Delete Word" %>
+    <% end %>
     </tr>
   </table>
 </div>
