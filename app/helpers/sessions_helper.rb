@@ -14,7 +14,7 @@ module SessionsHelper
   end
 
   def authenticate_user!
-    # FIXME: logged in user can't visit profile
+    # FIXME: need flash error to hand unauthorized redirect
     # if session[:user_id] != @user[:id]
     #   flash[:error] = "Sorry! You aren't authorized for that."
     #   redirect_to login_path
