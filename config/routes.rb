@@ -23,5 +23,8 @@ Rails.application.routes.draw do
   get '/topics/:topic_id/words/new' => 'words#new', as: 'new_topic_word'
   post '/topics/:topic_id/words' => 'words#create'
   get '/words/:id' => 'words#show', as: 'word'
+  get '/words/:id/edit' => 'words#edit', as: 'edit_word'
+  patch '/words/:id' => 'words#update'
+  delete '/words/:id' => 'words#destroy'
 
 end
