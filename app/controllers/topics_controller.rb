@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   # before_action :require_ownership!, only: [:edit, :update, :destroy]
@@ -53,10 +53,6 @@ class TopicsController < ApplicationController
 
     def topic_params
       params.require(:topic).permit(:name)
-    end
-
-    def set_topic
-      @topic = Topic.find_by_id(params[:id])
     end
 
     # def require_ownership!
