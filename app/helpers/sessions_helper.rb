@@ -14,14 +14,10 @@ module SessionsHelper
   end
 
   def authenticate_user!
-    # FIXME: need flash error to hand unauthorized redirect
-    # if session[:user_id] != @user[:id]
-    #   flash[:error] = "Sorry! You aren't authorized for that."
-    #   redirect_to login_path
-    # else
-    #   redirect_to user_path(@user)
-    # end
-    redirect_to login_path unless current_user
+    if current_user != @user
+      flash[:error] = "Sorry! You aren't authorized for that."
+      redirect_to user_path(current_user)
+    end
   end
 
   def logout
