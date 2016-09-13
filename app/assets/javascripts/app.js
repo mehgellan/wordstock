@@ -8,7 +8,12 @@ function config(  $routeProvider,   $locationProvider  )  {
      templateUrl: 'home.html',
      controller: 'HomeIndexController'
    })
-   .when('/words', {
+   .when('/topics/:id', {
+     templateUrl: 'topics/show.html',
+     controller: 'TopicShowController',
+     controllerAs: 'topicShowCtrl'
+   })
+   .when('/topics/:id/words', {
       templateUrl: 'words/index.html',
       controller: 'WordsIndexController',
       controllerAs: 'wordsIndexCtrl'

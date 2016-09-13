@@ -13,16 +13,18 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
 
   namespace :api, defaults: { format: :json } do
-    resources :words, except: [:new, :edit]
+    resources :topics do
+      resources :words, shallow: true
+    end
   end
 
-  get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
-  get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'
-  post '/users/:user_id/topics' => 'topics#create'
-  get '/topics/:id' => 'topics#show', as: 'topic'
-  get '/topics/:id/edit' => 'topics#edit', as: 'edit_topic'
-  patch '/topics/:id' => 'topics#update'
-  delete '/topics/:id' => 'topics#destroy'
+  # get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
+  # get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'
+  # post '/users/:user_id/topics' => 'topics#create'
+  # get '/topics/:id' => 'topics#show', as: 'topic'
+  # get '/topics/:id/edit' => 'topics#edit', as: 'edit_topic'
+  # patch '/topics/:id' => 'topics#update'
+  # delete '/topics/:id' => 'topics#destroy'
   #
   # get '/topics/:topic_id/words' => 'words#index', as: 'topic_words'
   # get '/topics/:topic_id/words/new' => 'words#new', as: 'new_topic_word'

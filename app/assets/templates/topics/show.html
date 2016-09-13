@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div>
+      {{ topicShowCtrl.topic.name }}
+    </div>
+    <div ng-repeat="word in topicShowCtrl.words">
+      <ul>
+        <li>{{word.term}}</li>
+        <li>{{word.pos}}</li>
+        <li>{{word.definition}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
