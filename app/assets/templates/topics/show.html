@@ -12,11 +12,25 @@
       </form>
     </div>
     <div ng-repeat="word in topicShowCtrl.words">
-      <ul>
-        <li>{{word.term}}</li>
-        <li>{{word.pos}}</li>
-        <li>{{word.definition}}</li>
-      </ul>
+      <div>
+        <button class='btn btn-info' ng-hide="editing" data-id="{{word.id}}" ng-click="editing = true">Edit Word</button>
+        <button class='btn btn-success' ng-show="editing" ng-click="topicShowCtrl.editWord(word); editing = false">Save Changes</button>
+        <ul>
+          <p>Word:</p>
+          <li ng-hide="editing">{{word.term}}</li>
+          <input ng-show="editing" ng-model="word.term" type="text" class="form-control input-md">
+
+          <p>Part of Speech:</p>
+          <li ng-hide="editing">{{word.pos}}</li>
+          <input ng-show="editing" ng-model="word.pos" type="text" class="form-control input-md">
+
+          <p>Definition:</p>
+          <li ng-hide="editing">{{word.definition}}</li>
+          <input ng-show="editing" ng-model="word.definition" type="text" class="form-control input-md">
+        </ul>
+        <button class='btn btn-danger' ng-click="wordsShowCtrl.deleteWord(word)">Delete Word</button>
+      </div>
+      <hr>
     </div>
   </div>
 </div>
