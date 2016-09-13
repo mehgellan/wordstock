@@ -25,6 +25,20 @@ function TopicShowController($http, $routeParams) {
     }).then(onWordNewSuccess, onWordNewError);
   };
 
+  $http({
+    method: 'GET',
+    url: '/api/words/' + $routeParams.id
+  }).then(onWordShowSuccess, onWordShowError);
+
+  vm.editWord = function(word) {
+    var id = $(this).attr('data-id');
+    $http({
+      method: 'PATCH',
+      url: '/api/words/' + word.id,
+      data: word
+    }).then(onWordsEditSuccess, onWordsEditError);
+  };
+
   function onTopicShowSuccess(response) {
     vm.topic = (response.data);
   }
@@ -47,5 +61,21 @@ function TopicShowController($http, $routeParams) {
 
   function onWordNewError(error) {
     console.log("There was post error: ", error);
+  }
+
+  function onWordShowSuccess(response) {
+    // vm.word = response.data;
+  }
+
+  function onWordShowError(error) {
+    console.log("There was a showing error: ", error);
+  }
+
+  function onWordsEditSuccess(response) {
+    vm.updatedWord = response.data;
+  }
+
+  function onWordsEditError(error) {
+    console.log("There was an editing error: ", error);
   }
 }

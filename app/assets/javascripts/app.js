@@ -18,6 +18,11 @@ function config(  $routeProvider,   $locationProvider  )  {
       controller: 'WordsIndexController',
       controllerAs: 'wordsIndexCtrl'
     })
+    .when('/words/:id', {
+      templateUrl: 'words/show.html',
+      controller: 'WordsShowController',
+      controllerAs: 'wordsShowCtrl'
+    })
   //  .otherwise({
   //    redirectTo: '/'
   //  });
