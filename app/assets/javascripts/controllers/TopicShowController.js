@@ -16,6 +16,15 @@ function TopicShowController($http, $routeParams) {
     url: '/api/topics/' + $routeParams.id + '/words'
   }).then(onWordsIndexSuccess, onWordsIndexError);
 
+
+  vm.createWord = function() {
+    $http({
+      method: 'POST',
+      url: '/api/topics/' + $routeParams.id + '/words',
+      data: vm.newWord
+    }).then(onWordNewSuccess, onWordNewError);
+  };
+
   function onTopicShowSuccess(response) {
     vm.topic = (response.data);
   }
@@ -25,10 +34,18 @@ function TopicShowController($http, $routeParams) {
   }
 
   function onWordsIndexSuccess(response) {
-    vm.words = (response.data);
+    vm.words = response.data;
   }
 
   function onWordsIndexError(error) {
-    console.log("There was an error: ", error);
+    console.log("There was an error updating the index: ", error);
+  }
+
+  function onWordNewSuccess(response) {
+    vm.words.push(response.data);
+  }
+
+  function onWordNewError(error) {
+    console.log("There was post error: ", error);
   }
 }
