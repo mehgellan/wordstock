@@ -1,19 +1,12 @@
-angular.module('wordstock', ['ngRoute', 'templates'])
-       .config(config)
-       .controller('HomeIndexCtrl', [
-          '$scope',
-          function($scope){
-            $scope.test = 'Hello world!';
-          }
-        ]);
+var app = angular.module('wordstock', ['ngRoute', 'templates'])
+       .config(config);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config(  $routeProvider,   $locationProvider  )  {
  $routeProvider
    .when('/', {
      templateUrl: 'home.html',
-     controller: 'HomeIndexController',
-     controllerAs: 'homeIndexCtrl'
+     controller: 'HomeIndexController'
    })
    .otherwise({
      redirectTo: '/'
@@ -25,9 +18,3 @@ function config(  $routeProvider,   $locationProvider  )  {
      requireBase: false
    });
 }
-// 
-// HomeIndexController.$inject = [];
-// function HomeIndexController() {
-//   var vm = this;
-//   vm.greeting = "what's up?";
-// }
