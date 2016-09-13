@@ -11,12 +11,12 @@ function config(  $routeProvider,   $locationProvider  )  {
    .when('/words', {
       templateUrl: 'words/index.html',
       controller: 'WordsIndexController',
-      controllerAs: 'wordIndexCtrl'
+      controllerAs: 'wordsIndexCtrl'
     })
-   .otherwise({
-     redirectTo: '/'
-   });
-
+  //  .otherwise({
+  //    redirectTo: '/'
+  //  });
+;
  $locationProvider
    .html5Mode({
      enabled: true,

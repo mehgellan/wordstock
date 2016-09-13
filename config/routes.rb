@@ -12,12 +12,9 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy', as: 'logout'
   post '/sessions' => 'sessions#create'
 
-  # namespace :api, defaults: { format: :json } do
-  #   resources :topics, only: [:index, :show] do
-  #     resources :words, except: [:new, :edit] do
-  #     end
-  #   end
-  # end
+  namespace :api, defaults: { format: :json } do
+    resources :words, except: [:new, :edit]
+  end
 
   get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
   get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'
