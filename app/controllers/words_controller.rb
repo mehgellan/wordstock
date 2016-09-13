@@ -25,11 +25,11 @@ class WordsController < ApplicationController
   end
 
   def show
-    render :show
+    render json: :show
   end
 
   def edit
-    render :edit
+    render json: :edit
   end
 
   def update

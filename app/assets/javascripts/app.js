@@ -8,6 +8,11 @@ function config(  $routeProvider,   $locationProvider  )  {
      templateUrl: 'home.html',
      controller: 'HomeIndexController'
    })
+   .when('/words', {
+      templateUrl: 'words/index.html',
+      controller: 'WordsIndexController',
+      controllerAs: 'wordIndexCtrl'
+    })
    .otherwise({
      redirectTo: '/'
    });
