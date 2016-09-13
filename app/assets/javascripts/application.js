@@ -18,6 +18,6 @@
 
 $(document).ready(function() {
   $('#newWordForm').click(function() {
-    $('input').val('');
+    $('.text-input').val('');
   });
 });
