@@ -1,12 +1,10 @@
 <body ng-app="wordstock">
-  <!-- <div ng-controller="HeaderController">
+  <div>
     <nav class="navbar navbar-default">
-      <ul>
-        <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
-        <li ng-class="{ active: isActive('/login')}"><a href="/login">Login</a></li>
-        <li ng-class="{ active: isActive('/signin')}"><a href="/signin">Sign Up</a></li>
-      </ul>
+      <% flash.each do |name, msg| %>
+        <%= msg %>
+      <% end %>
     </nav>
-  </div> -->
+  </div>
   <div ng-view></div>
 </body>

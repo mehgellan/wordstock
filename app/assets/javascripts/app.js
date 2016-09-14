@@ -8,11 +8,6 @@ function config(  $routeProvider,   $locationProvider  )  {
      templateUrl: 'home.html',
      controller: 'HomeIndexController'
    })
-  //  .when('/users/:id', {
-  //    templateUrl: 'users/show.html',
-  //    controller: 'UserShowController',
-  //    controllerAs: 'userShowCtrl'
-  //  })
   .when('/topics', {
     templateUrl: 'topics/index.html',
     controller: 'TopicIndexController',
@@ -42,4 +37,5 @@ function config(  $routeProvider,   $locationProvider  )  {
      enabled: true,
      requireBase: false
    });
+
 }
