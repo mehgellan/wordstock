@@ -1,66 +1,88 @@
 <div class="container">
   <div class="row">
     <div>
-      <h1>{{ topicShowCtrl.topic.name }}</h1>
+      <h1 id="topic-header">{{ topicShowCtrl.topic.name }}</h1>
+      <button class="btn btn-default"><a href="/topics">Back to Topics</a></button>
     </div>
-    <div>
-      <form>
-        <div>
-          <input type="text" placeholder="Search" ng-model="searchWords">
-          <input type="submit" value="Search">
-        </div>
-      </form>
-    </div>
-    <div class="row">
-      <h4>Add a word to your topic!</h4>
-      <form ng-submit="topicShowCtrl.createWord()">
-        Word: <input type="text" ng-model="topicShowCtrl.newWord.term" class="text-input">
-        Part of Speech: <input type="text" ng-model="topicShowCtrl.newWord.pos" class="text-input">
-        Definition: <input type="text" ng-model="topicShowCtrl.newWord.definition" class="text-input">
-        <input type="submit", value="Submit" class="createForm">
-      </form>
-    </div>
-    <div>
-      <div>
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <td><a href="#" ng-click="sortType = 'term'; sortReverse = !sortReverse">Term</a></td>
-              <td><a href="#" ng-click="sortType = 'pos'; sortReverse = !sortReverse">Part of Speech</a></td>
-              <td><a href="#" ng-click="sortType = 'definition'; sortReverse = !sortReverse">Definition</a></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </thead>
-          <tbody ng-repeat="word in topicShowCtrl.words | orderBy:sortType:sortReverse | filter:searchWords">
-            <tr data-id="{{word.id}}">
-              <td>
-                <span ng-hide="editing">{{ word.term}}</span>
-                <input ng-show="editing" ng-model="word.term" type="text" class="form-control input-md">
-              </td>
-              <td>
-                <span ng-hide="editing">{{ word.pos }}</span>
-                <input ng-show="editing" ng-model="word.pos" type="text" class="form-control input-md">
-              </td>
-              <td>
-                <span ng-hide="editing">{{ word.definition}}</span>
-                <input ng-show="editing" ng-model="word.definition" type="text" class="form-control input-md">
-              </td>
-              <td>
-                <button class='btn btn-info' ng-hide="editing" data-word-id="{{word.id}}" ng-click="editing = true">Edit Word</button>
-                <button class='btn btn-success' ng-show="editing" ng-click="topicShowCtrl.editWord(word); editing = false">Save Changes</button>
-              </td>
-              <td>
-                <button class='btn btn-danger' ng-click="topicShowCtrl.deleteWord(word)">Delete Word</button>
-              </td>
-              <td>
-                <a href="/words/{{word.id}}">View Details</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Add a word to your topic!</h4>
+        <form ng-submit="topicShowCtrl.createWord()">
+          <div class="form-group">
+            <label for="term">Word</label>
+            <input type="text" id="term" class="form-control text-input" ng-model="topicShowCtrl.newWord.term">
+          </div>
+          <div class="form-group">
+            <label>Part of Speech</label>
+            <input type="text" ng-model="topicShowCtrl.newWord.pos" class="form-control text-input">
+          </div>
+          <div class="form-group">
+            <label>Definition</label>
+            <input type="text" ng-model="topicShowCtrl.newWord.definition" class="form-control text-input">
+          </div>
+          <button type="submit" value="Submit" class="btn btn-primary createForm">Add Word</button>
+        </form>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-md-2 col-xs-12">
+        <h3>Word List</h3>
+      </div>
+      <div class="col-md-6 col-xs-12 pull-left">
+        <form class="search-words">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button class="btn btn-success" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="label-icon">Search</span>
+              </button>
+            </div>
+            <input type="text" class="form-control" ng-model="searchWords" placeholder="Search words...">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-default">
+          <tr class="table-active">
+            <td><a href="#" ng-click="sortType = 'term'; sortReverse = !sortReverse">Term</a></td>
+            <td><a href="#" ng-click="sortType = 'pos'; sortReverse = !sortReverse">Part of Speech</a></td>
+            <td><a href="#" ng-click="sortType = 'definition'; sortReverse = !sortReverse">Definition</a></td>
+            <td></td>
+            <td></td>
+            <!-- <td></td> -->
+          </tr>
+        </thead>
+        <tbody class="table-striped" ng-repeat="word in topicShowCtrl.words | orderBy:sortType:sortReverse | filter:searchWords">
+          <tr data-id="{{word.id}}">
+            <td>
+              <span ng-hide="editing">{{ word.term}}</span>
+              <input ng-show="editing" ng-model="word.term" type="text" class="form-control input-md">
+            </td>
+            <td>
+              <span ng-hide="editing">{{ word.pos }}</span>
+              <input ng-show="editing" ng-model="word.pos" type="text" class="form-control input-md">
+            </td>
+            <td>
+              <span ng-hide="editing">{{ word.definition}}</span>
+              <input ng-show="editing" ng-model="word.definition" type="text" class="form-control input-md">
+            </td>
+            <td>
+              <button class='btn btn-info' ng-hide="editing" data-word-id="{{word.id}}" ng-click="editing = true">Edit Word</button>
+              <button class='btn btn-success' ng-show="editing" ng-click="topicShowCtrl.editWord(word); editing = false">Save Changes</button>
+            </td>
+            <td>
+              <button class='btn btn-danger' ng-click="topicShowCtrl.deleteWord(word)">Delete Word</button>
+            </td>
+            <td>
+              <a href="/words/{{word.id}}">View Details</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

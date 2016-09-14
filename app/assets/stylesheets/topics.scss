@@ -1,3 +1,34 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+thead td {
+  font-size: 20px;
+}
+
+thead {
+  background-color: lightgrey;
+}
+
+.search-words {
+  margin:0;
+  padding:10px;
+}
+
+h3 {
+  margin:0;
+  padding:10px;
+  padding-left:20px;
+}
+
+.panel {
+  margin-bottom: 50px;
+}
+
+#topic-header {
+  display:inline-block;
+}
+
+.btn-default {
+  margin: 0 10px;
+}

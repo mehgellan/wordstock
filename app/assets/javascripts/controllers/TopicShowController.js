@@ -6,7 +6,7 @@ TopicShowController.inject = ['$http', '$routeParams', '$window'];
 
 function TopicShowController($http, $routeParams, $window) {
   var vm = this;
-  vm.sortType = 'term';
+  vm.sortType = 'created_at';
   vm.sortReverse = false;
 
   $http({
@@ -45,7 +45,7 @@ function TopicShowController($http, $routeParams, $window) {
 
   vm.deleteWord = function(word) {
     var id = $('button').attr('data-word-id');
-    if (confirm("Are you sure you want to delete this route? You won't be able to get it back.")) {
+    if (confirm("Are you sure you want to delete this word?")) {
         $http({
         method: 'DELETE',
         url: '/api/words/' + word.id,
@@ -71,7 +71,7 @@ function TopicShowController($http, $routeParams, $window) {
   }
 
   function onWordNewSuccess(response) {
-    vm.words.push(response.data);
+    vm.words.unshift(response.data);
   }
 
   function onWordNewError(error) {

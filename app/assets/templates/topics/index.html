@@ -1,17 +1,30 @@
-<div>
-  <form ng-submit="topicIndexCtrl.createTopic()" class="createForm">
-    <div>
-      <input type="text" ng-model="topicIndexCtrl.newTopic.name" placeholder="Add a new Topic" class="text-input">
-      <input type="submit", value="Submit">
+<div class="container">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form ng-submit="topicIndexCtrl.createTopic()" class="createForm">
+          <input type="text" ng-model="topicIndexCtrl.newTopic.name" placeholder="Add a new Topic" class="text-input">
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-  </form>
-  <form>
-    <div>
-      <input type="text" placeholder="Search" ng-model="searchTopic">
-      <input type="submit" value="Search">
+    <div class="col-md-12 col-xs-12 panel panel-default" align="center">
+      <div class="panel-body">
+        <form>
+          <div class="input-group col-md-6">
+            <input type="text" class="form-control" ng-model="searchTopic" placeholder="Search topics...">
+            <div class="input-group-btn">
+              <button class="btn btn-success" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="label-icon">Search</span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'name' | filter:searchTopic">
+          <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
+        </div>
+      </div>
     </div>
-  </form>
-  <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'name' | filter:searchTopic">
-    <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
   </div>
 </div>
