@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('#newWordForm').click(function() {
+  $('.createForm').click(function() {
     $('.text-input').val('');
   });
 });

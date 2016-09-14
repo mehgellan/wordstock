@@ -8,11 +8,16 @@ function config(  $routeProvider,   $locationProvider  )  {
      templateUrl: 'home.html',
      controller: 'HomeIndexController'
    })
-   .when('/users/:id', {
-     templateUrl: 'users/show.html',
-     controller: 'UserShowController',
-     controllerAs: 'userShowCtrl'
-   })
+  //  .when('/users/:id', {
+  //    templateUrl: 'users/show.html',
+  //    controller: 'UserShowController',
+  //    controllerAs: 'userShowCtrl'
+  //  })
+  .when('/topics', {
+    templateUrl: 'topics/index.html',
+    controller: 'TopicIndexController',
+    controllerAs: 'topicIndexCtrl'
+  })
    .when('/topics/:id', {
      templateUrl: 'topics/show.html',
      controller: 'TopicShowController',

@@ -1,5 +1,12 @@
 <body ng-app="wordstock">
-  <nav class="navbar navbar-default">
-  </nav>
+  <!-- <div ng-controller="HeaderController">
+    <nav class="navbar navbar-default">
+      <ul>
+        <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
+        <li ng-class="{ active: isActive('/login')}"><a href="/login">Login</a></li>
+        <li ng-class="{ active: isActive('/signin')}"><a href="/signin">Sign Up</a></li>
+      </ul>
+    </nav>
+  </div> -->
   <div ng-view></div>
 </body>

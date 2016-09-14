@@ -12,7 +12,6 @@ class Api::TopicsController < ApplicationController
     render json: @topic
   end
   def create
-    topic_params = params.require(:topic).permit(:name)
     @topic = current_user.topics.new(topic_params)
     if @topic.save
       flash[:success] = "Your topic, #{@topic.name} was successfully created!"
@@ -22,5 +21,20 @@ class Api::TopicsController < ApplicationController
       redirect_to new_user_topic_path(@user)
     end
   end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+    def topic_params
+      params.require(:topic).permit(:name)
+    end
 
 end

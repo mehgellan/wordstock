@@ -1,0 +1,19 @@
+<div>
+  <form ng-submit="topicIndexCtrl.createTopic()" class="createForm">
+    <div>
+      <input type="text" ng-model="topicIndexCtrl.newTopic.name" placeholder="Add a new Topic" class="text-input">
+      <input type="submit", value="Submit">
+    </div>
+  </form>
+  <!-- <form>
+    <div>
+      <input type="text" placeholder="Search" ng-model="searchTopic">
+    </div>
+  </form> -->
+  <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:sortType | filter:searchTopic">
+    <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
+      <ul>
+        <li></li>
+      </ul>
+  </div>
+</div>
