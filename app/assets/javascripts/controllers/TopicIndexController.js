@@ -7,7 +7,6 @@ TopicIndexController.$inject = ['$http', '$routeParams'];
 function TopicIndexController($http, $routeParams) {
   var vm = this;
   var id = $('a').attr('data-topic-id');
-  vm.orderBy = 'name';
 
   $http({
     method: 'GET',

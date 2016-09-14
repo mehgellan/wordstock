@@ -4,10 +4,9 @@
 <%= link_to "Delete Account", user_path(@user), method: :delete %>
 <div>
   <h2><%= @user.first_name %>'s Topics</h2>
-  <%= link_to "Add New Topic", api_topics_path %>
   <ul>
     <% @user.topics.each do |topic| %>
-    <li><%= link_to "#{topic.name}", topic_path(topic) %></li>
+    <li><a href="/topics/<%= topic.id %>"><%= topic.name %></a></li>
     <% end %>
   </ul>
 </div>

@@ -5,15 +5,13 @@
       <input type="submit", value="Submit">
     </div>
   </form>
-  <!-- <form>
+  <form>
     <div>
       <input type="text" placeholder="Search" ng-model="searchTopic">
+      <input type="submit" value="Search">
     </div>
-  </form> -->
-  <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:sortType | filter:searchTopic">
+  </form>
+  <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'name' | filter:searchTopic">
     <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
-      <ul>
-        <li></li>
-      </ul>
   </div>
 </div>

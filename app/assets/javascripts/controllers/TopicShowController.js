@@ -6,6 +6,9 @@ TopicShowController.inject = ['$http', '$routeParams', '$window'];
 
 function TopicShowController($http, $routeParams, $window) {
   var vm = this;
+  vm.sortType = 'term';
+  vm.sortReverse = false;
+
   $http({
     method: 'GET',
     url: '/api/topics/' + $routeParams.id
@@ -31,7 +34,8 @@ function TopicShowController($http, $routeParams, $window) {
   }).then(onWordShowSuccess, onWordShowError);
 
   vm.editWord = function(word) {
-    var id = $('#word').attr('data-id');
+    var id = $('button').attr('data-word-id');
+    console.log("id: ", id, "word: ", word);
     $http({
       method: 'PATCH',
       url: '/api/words/' + word.id,
@@ -40,7 +44,7 @@ function TopicShowController($http, $routeParams, $window) {
   };
 
   vm.deleteWord = function(word) {
-    var id = $('#word').attr('data-id');
+    var id = $('button').attr('data-word-id');
     if (confirm("Are you sure you want to delete this route? You won't be able to get it back.")) {
         $http({
         method: 'DELETE',
@@ -93,7 +97,7 @@ function TopicShowController($http, $routeParams, $window) {
   function onWordDeleteSuccess(response) {
     console.log(response.data);
     var deletedWordId = response.data.id;
-    $('div[data-word-id=' + deletedWordId + ']').remove();
+    $('tr[data-id=' + deletedWordId + ']').remove();
     // $window.location.href = '/topics/' + $routeParams.id;
     // var index = vm.words.indexOf(word);
     // vm.words.splice(index,1);
