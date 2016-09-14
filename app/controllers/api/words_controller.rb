@@ -35,10 +35,18 @@ class Api::WordsController < ApplicationController
     @word = Word.find_by_id(params[:id])
     @word.update(word_params)
     if @word.save
+      flash[:success] = "#{@word.term} has been updated!"
       render json: @word
     else
       render json: {errors: @word.errors.full_messages.join(", "), status: :unprocessable_entity}
     end
+  end
+
+  def destroy
+    @word = Word.find_by_id(params[:id])
+    @word.destroy
+    flash[:success] = @word.term + "has been deleted!"
+    render json: @word
   end
 
   private
