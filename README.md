@@ -5,6 +5,7 @@
 ##### Demo Login Info
 
 Email: demo@demo.com
+
 Password: qwerty
 
 A full-stack Rails app that provides a personal dictionary for users based off a chosen topic. Users can create new words to help them organize their learning and remember words more easily.
