@@ -14,11 +14,6 @@ function TopicShowController($http, $routeParams, $window) {
     url: '/api/topics/' + $routeParams.id
   }).then(onTopicShowSuccess, onTopicShowError);
 
-  $http({
-    method: 'GET',
-    url: '/api/topics/' + $routeParams.id + '/words'
-  }).then(onWordsIndexSuccess, onWordsIndexError);
-
   vm.editTopic = function(topic) {
     $http({
       method: 'PATCH',
@@ -26,6 +21,24 @@ function TopicShowController($http, $routeParams, $window) {
       data: topic
     }).then(onTopicEditSuccess, onTopicEditError);
   };
+
+  vm.deleteTopic = function(topic) {
+    if (confirm("Are you sure you want to delete this topic?")) {
+        $http({
+        method: 'DELETE',
+        url: '/api/topics/' + $routeParams.id,
+        data: topic
+      }).then(onTopicDeleteSuccess, onTopicDeleteError);
+    }
+  };
+
+// ------------ WORD REQUESTS
+
+  $http({
+    method: 'GET',
+    url: '/api/topics/' + $routeParams.id + '/words'
+  }).then(onWordsIndexSuccess, onWordsIndexError);
+
 
   vm.createWord = function() {
     $http({
@@ -35,10 +48,10 @@ function TopicShowController($http, $routeParams, $window) {
     }).then(onWordNewSuccess, onWordNewError);
   };
 
-  $http({
-    method: 'GET',
-    url: '/api/words/' + $routeParams.id
-  }).then(onWordShowSuccess, onWordShowError);
+  // $http({
+  //   method: 'GET',
+  //   url: '/api/words/' + $routeParams.id
+  // }).then(onWordShowSuccess, onWordShowError);
 
   vm.editWord = function(word) {
     var id = $('button').attr('data-word-id');
@@ -77,6 +90,18 @@ function TopicShowController($http, $routeParams, $window) {
     console.log("There was a topic editing error: ", error);
   }
 
+  function onTopicDeleteSuccess(response) {
+    console.log(response.data);
+    var deletedTopicId = response.data.id;
+    $('div[data-topic-id=' + deletedTopicId + ']').remove();
+  }
+
+  function onTopicDeleteError(error) {
+    console.log("There was an error deleting your topic: ", error);
+  }
+
+// ------------ WORD RESPONSE FUNCTIONS
+
   function onWordsIndexSuccess(response) {
     vm.words = response.data;
   }
@@ -93,13 +118,6 @@ function TopicShowController($http, $routeParams, $window) {
     console.log("There was post error: ", error);
   }
 
-  function onWordShowSuccess(response) {
-    // vm.word = response.data;
-  }
-
-  function onWordShowError(error) {
-    console.log("There was a showing error: ", error);
-  }
 
   function onWordsEditSuccess(response) {
     console.log(response.data);

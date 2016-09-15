@@ -37,4 +37,14 @@ function TopicIndexController($http, $routeParams) {
     console.log('There was an error creating a topic: ', error);
   }
 
+  function onTopicDeleteSuccess(response) {
+    console.log(response.data);
+    var deletedTopicId = response.data.id;
+    $('div[data-topic-id=' + deletedTopicId + ']').remove();
+  }
+
+  function onTopicDeleteError(error) {
+    console.log("There was an error deleting your topic: ", error);
+  }
+
 }

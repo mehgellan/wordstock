@@ -25,8 +25,13 @@
             </div>
           </div>
         </form>
-        <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'-created_at' | filter:searchTopic">
-          <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
+        <div class="col-md-12 col-xs-12" align="center" ng-repeat="topic in topicIndexCtrl.topics | orderBy:'-created_at' | filter:searchTopic">
+          <div class="col-md-6 col-md-offset-2 col-xs-12">
+            <h3 class="topic-header"><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
+          </div>
+          <!-- <div class="col-md-2 pull-left">
+            <button ng-click="topicIndexCtrl.deleteTopic(topic)" class="glyphicon glyphicon-trash btn btn-default"></button>
+          </div> -->
         </div>
       </div>
     </div>

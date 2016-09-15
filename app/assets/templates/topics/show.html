@@ -6,7 +6,6 @@
         <input ng-show="editing" id="nameEdit" ng-model="topicShowCtrl.topic.name" type="text" class="form-control input-md">
         <button ng-show="editing" ng-click="topicShowCtrl.editTopic(topicShowCtrl.topic); editing = false" type="submit" class="btn btn-success glyphicon glyphicon-ok"></button>
         <button ng-hide="editing" ng-click="editing = true" class="btn btn-default glyphicon glyphicon-pencil" aria-hidden="true"></button>
-        <button class="glyphicon glyphicon-trash btn btn-default"></button>
         <button class="btn btn-default topics-back"><a href="/topics">Back to Topics</a></button>
       </div>
     </div>
