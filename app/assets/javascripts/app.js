@@ -4,10 +4,6 @@ var app = angular.module('wordstock', ['ngRoute', 'templates'])
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config(  $routeProvider,   $locationProvider  )  {
  $routeProvider
-   .when('/', {
-     templateUrl: 'home.html',
-     controller: 'HomeIndexController'
-   })
   .when('/topics', {
     templateUrl: 'topics/index.html',
     controller: 'TopicIndexController',
