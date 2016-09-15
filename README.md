@@ -88,7 +88,9 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 ## Planning
 
 Wireframes
+
 ![alt text](http://i.imgur.com/j78U762.png "Wireframes")
 
 Entity Relationship Diagram
+
 ![alt text](http://i.imgur.com/DxVxSnQ.png "ERD")
