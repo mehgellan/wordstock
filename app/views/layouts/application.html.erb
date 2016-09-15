@@ -12,15 +12,28 @@
   </head>
 
   <body>
-    <ul>
-      <% if current_user %>
-        <li class="nav-link"><a href="/users/<%= current_user.id %>">Profile</a></li>
-        <li class="nav-link"><a href="/logout">Log Out</a></li>
-      <% else %>
-        <li class="nav-link"><a href="/signin">Sign Up</a></li>
-        <li class="nav-link"><a href="/login">Log In</a></li>
-      <% end %>
-    </ul>
+    <div class="navbar navbar-default">
+      <nav>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><%= link_to "Home", root_path %></li>
+          <% if current_user %>
+            <li role="presentation" class="nav-link">
+              <a href="/users/<%= current_user.id %>">Profile</a>
+            </li>
+            <li role="presentation" class="nav-link">
+              <a href="/logout">Log Out</a>
+            </li>
+          <% else %>
+            <li role="presentation" class="nav-link">
+              <a href="/signin">Sign Up</a>
+            </li>
+            <li role="presentation" class="nav-link">
+              <a href="/login">Log In</a>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
     <% flash.each do |name, msg| %>
       <%= msg %>
     <% end %>

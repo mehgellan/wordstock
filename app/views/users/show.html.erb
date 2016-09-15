@@ -20,6 +20,7 @@
     </div>
     <div class="col-md-12 col-xs-12" align="center">
       <h1><%= @user.first_name %>'s Topics</h1>
+      <a href="/topics">Add a Topic</a>
       <ul>
         <% @user.topics.each do |topic| %>
         <li>

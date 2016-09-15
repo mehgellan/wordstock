@@ -16,3 +16,14 @@ User.all.each do |user|
     )
   end
 end
+
+Topic.all.each do |topic|
+  3.times do
+    Word.create(
+      term: FFaker::HealthcareIpsum.word,
+      pos: [ 'noun', 'adjective', 'verb'].sample,
+      definition: [FFaker::DizzleIpsum.sentence, FFaker::HealthcareIpsum.sentence, FFaker::HipsterIpsum.sentence].sample,
+      topic_id: topic.id
+    )
+  end
+end
