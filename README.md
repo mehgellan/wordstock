@@ -79,6 +79,7 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 
 ## Planned Features
 
+* Add useful rspec tests to all controllers
 * Integrate into Mobile friendly app
 * Hit Dictionary api for Word of the Day Feature
 * Add Example model so user can create multi-media examples to a word making the word more interactive and easier to remember.
