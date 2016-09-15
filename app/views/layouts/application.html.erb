@@ -14,16 +14,16 @@
   <body>
     <ul>
       <% if current_user %>
-        <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li class="nav-link"><a href="/users/<%= current_user.id %>">Profile</a></li>
+        <li class="nav-link"><a href="/logout">Log Out</a></li>
       <% else %>
-        <li><a href="/signin">Sign Up</a></li>
-        <li><a href="/login"></a></li>
+        <li class="nav-link"><a href="/signin">Sign Up</a></li>
+        <li class="nav-link"><a href="/login">Log In</a></li>
       <% end %>
     </ul>
-    <!-- <% flash.each do |name, msg| %>
+    <% flash.each do |name, msg| %>
       <%= msg %>
-    <% end %> -->
+    <% end %>
 
     <%= yield %>
   </body>

@@ -7,6 +7,7 @@
         <button ng-show="editing" ng-click="topicShowCtrl.editTopic(topicShowCtrl.topic); editing = false" type="submit" class="btn btn-success glyphicon glyphicon-ok"></button>
         <button ng-hide="editing" ng-click="editing = true" class="btn btn-default glyphicon glyphicon-pencil" aria-hidden="true"></button>
         <button class="btn btn-default topics-back"><a href="/topics">Back to Topics</a></button>
+        <button class="btn btn-default"><a href="/users/{{topicShowCtrl.topic.user_id}}">Back to Profile</a></button>
       </div>
     </div>
     <div class="panel panel-default">

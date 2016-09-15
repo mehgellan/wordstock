@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'site#index'
+  root 'users#new'
 
   get '/signin' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'
@@ -17,6 +17,9 @@ Rails.application.routes.draw do
       resources :words, shallow: true
     end
   end
+
+  # get '/topics/:id' => 'topics#show', as: 'topic'
+  # delete '/topics/:id' => 'topics#destroy'
 
   # get '/users/:user_id/topics' => 'topics#index', as: 'user_topics'
   # get '/users/:user_id/topics/new' => 'topics#new', as: 'new_user_topic'

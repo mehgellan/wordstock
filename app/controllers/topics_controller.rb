@@ -1,8 +1,7 @@
 class TopicsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update]
   before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  # before_action :require_ownership!, only: [:edit, :update, :destroy]
 
   def index
     @topics = Topic.all
@@ -40,8 +39,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    flash[:notice] = "Your topic was successfully deleted"
-    redirect_to new_user_topic_path(@topic.user_id)
+    redirect_to user_path(@topic.user_id)
   end
 
 
@@ -58,12 +56,5 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:name)
     end
-
-    # def require_ownership!
-    #   if !current_user_is_owner?
-    #     flash[:error] = "You must be logged in as #{@topic.user.first_name}"
-    #     redirect_to login_path
-    #   end
-    # end
 
 end
