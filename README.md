@@ -11,6 +11,11 @@ Email: demo@demo.com
 
 Password: qwerty
 
+##### About Me
+
+My name is Meg, I'm a full stack web developer out of San Francisco CA.
+Checkout my GitHub [page](https://github.com/mehgellan)
+
 ## Motivation
 
 The purpose of this app is organized vocab accessibility. I wanted to create an app where users could bring their word lists and store them all in one place. For instance, if someone was studying a certain topic or needed to prepare for a project, they could store all those related words under that topic. In this way, a user could review the terms as needed as well as manage the lists they had.
@@ -43,7 +48,6 @@ All my Angular controllers were stored in a controller directory in my assets/ja
     ...
 ```    
 
-
 ## Technologies Used
 
 * Ruby 2.3.0, RoR 5.0.0
@@ -67,6 +71,7 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 * Full-featured framework that comes with data-binding, dependency injection, extensibility, etc.
 * The Rails ERB template can be used in an Angular project so that both all of the Rails controller variables and the helper method can be availed in the template.
 * Deployment is easy – as all setup is – via Rails, so there is no need for any other run time environment or the JavaScript task runner for Angular project.
+
 #### CONS
 * Both Angular and Rails are very opinionated and the code can get rather heavier than using vanilla Rails or even another frontend library like React.
 * This is tightly coupled with the Rails application and if too many Rails helper methods are used in the Angular app, then scalability will be a concern due to difficulty with code segregation in Rails and Angular apps.
@@ -75,11 +80,14 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 ## Planned Features
 
 * Integrate into Mobile friendly app
-* Hit Dictionary api endpoint for Word of the Day Feature
+* Hit Dictionary api for Word of the Day Feature
 * Add Example model so user can create multi-media examples to a word making the word more interactive and easier to remember.
-*
+* Use materialize styling framework
 
 ## Planning
 
+Wireframes
 ![alt text](http://i.imgur.com/j78U762.png "Wireframes")
+
+Entity Relationship Diagram
 ![alt text](http://i.imgur.com/DxVxSnQ.png "ERD")
