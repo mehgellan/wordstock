@@ -1,3 +1,69 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// body{
+//  background-color: #2B2B2B;
+// }
+
+h4 a {
+  color:#fff;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+li {
+  list-style-type: none;
+  font-size: 24px;
+}
+
+*{
+    font-family: 'Raleway', sans-serif;
+    // color : #FFF;
+
+}
+
+div h3 span{
+     color : #FFF;
+     font-size:14px;
+}
+
+div span {
+     font-weight: 200;
+}
+
+h1{
+     font-weight: 200;
+}
+
+.image-circle{
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    margin: 10px;
+}
+
+.outter{
+    padding: 0px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.follow {
+    margin:10px;
+    background-color:#FC563B;
+    height: 40px;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+.follow:hover {
+    background-color:#F22F26;
+    height: 40px;
+    cursor:pointer;
+}
+.line{
+    border-bottom : 5px solid #F32D27;
+}

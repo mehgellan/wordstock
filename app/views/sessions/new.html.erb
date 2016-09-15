@@ -1,4 +1,4 @@
-<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+<!-- <%= form_for @user, url: "/sessions", method: "post" do |f| %>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
@@ -6,4 +6,33 @@
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
   <%= f.submit "Sign In" %>
+<% end %> -->
+
+<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+  <div class="col-md-offset-5 col-md-3 panel panel-default">
+    <div class="panel-heading">
+        <h1>Log In</h1>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user" style="width: auto"></i>
+          </span>
+          <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-lock" style="width: auto"></i>
+          </span>
+          <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Submit", :class => "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
 <% end %>

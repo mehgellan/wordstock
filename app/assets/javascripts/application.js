@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular-rails-templates
+//= require_tree ../templates
 //= require_tree .
+
+$(document).ready(function() {
+  $('.createForm').click(function() {
+    $('.text-input').val('');
+  });
+});

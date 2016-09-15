@@ -1,14 +1,11 @@
 class SessionsController < ApplicationController
-  before_action :authenticate_user!, only: [:destroy]
 
   def new
     @user = User.new
   end
 
   def create
-    @user = User.confirm(user_params)
-    # handles bug if User.confirm returns false
-    if @user && @user.valid?
+    if @user = User.confirm(user_params)
       flash[:notice] = "Successfully logged in, welcome #{@user.first_name}!"
       login(@user)
       redirect_to user_path(@user)
