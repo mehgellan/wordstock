@@ -3,8 +3,12 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <form ng-submit="topicIndexCtrl.createTopic()" class="createForm">
-          <input type="text" ng-model="topicIndexCtrl.newTopic.name" placeholder="Add a new Topic" class="text-input">
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <div class="form-group" align="center">
+            <input type="text" ng-model="topicIndexCtrl.newTopic.name" placeholder="Add a new Topic" class="text-input new-topic">
+          </div>
+          <div align="center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     </div>
@@ -21,7 +25,7 @@
             </div>
           </div>
         </form>
-        <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'name' | filter:searchTopic">
+        <div ng-repeat="topic in topicIndexCtrl.topics | orderBy:'-created_at' | filter:searchTopic">
           <h3><a data-topic-id="{{topic.id}}" ng-href="topics/{{topic.id}}">{{ topic.name }}</a></h3>
         </div>
       </div>

@@ -19,6 +19,13 @@ function TopicShowController($http, $routeParams, $window) {
     url: '/api/topics/' + $routeParams.id + '/words'
   }).then(onWordsIndexSuccess, onWordsIndexError);
 
+  vm.editTopic = function(topic) {
+    $http({
+      method: 'PATCH',
+      url: '/api/topics/' + $routeParams.id,
+      data: topic
+    }).then(onTopicEditSuccess, onTopicEditError);
+  };
 
   vm.createWord = function() {
     $http({
@@ -60,6 +67,14 @@ function TopicShowController($http, $routeParams, $window) {
 
   function onTopicShowError(error) {
     console.log("There was an error: ", error);
+  }
+
+  function onTopicEditSuccess(response) {
+    console.log(response.data);
+  }
+
+  function onTopicEditError(error) {
+    console.log("There was a topic editing error: ", error);
   }
 
   function onWordsIndexSuccess(response) {

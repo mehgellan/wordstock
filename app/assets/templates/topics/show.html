@@ -1,13 +1,19 @@
 <div class="container">
   <div class="row">
     <div>
-      <h1 id="topic-header">{{ topicShowCtrl.topic.name }}</h1>
-      <button class="btn btn-default"><a href="/topics">Back to Topics</a></button>
+      <h1 ng-hide="editing" class="topic-header">{{ topicShowCtrl.topic.name }}</h1>
+      <div class="editForm">
+        <input ng-show="editing" id="nameEdit" ng-model="topicShowCtrl.topic.name" type="text" class="form-control input-md">
+        <button ng-show="editing" ng-click="topicShowCtrl.editTopic(topicShowCtrl.topic); editing = false" type="submit" class="btn btn-success glyphicon glyphicon-ok"></button>
+        <button ng-hide="editing" ng-click="editing = true" class="btn btn-default glyphicon glyphicon-pencil" aria-hidden="true"></button>
+        <button class="glyphicon glyphicon-trash btn btn-default"></button>
+        <button class="btn btn-default topics-back"><a href="/topics">Back to Topics</a></button>
+      </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
         <h4>Add a word to your topic!</h4>
-        <form ng-submit="topicShowCtrl.createWord()">
+        <form ng-submit="topicShowCtrl.createWord()" class="form-inline">
           <div class="form-group">
             <label for="term">Word</label>
             <input type="text" id="term" class="form-control text-input" ng-model="topicShowCtrl.newWord.term">
@@ -30,7 +36,7 @@
       <div class="col-md-2 col-xs-12">
         <h3>Word List</h3>
       </div>
-      <div class="col-md-6 col-xs-12 pull-left">
+      <div class="col-md-6 col-xs-12">
         <form class="search-words">
           <div class="input-group">
             <div class="input-group-btn">
@@ -53,7 +59,7 @@
             <td><a href="#" ng-click="sortType = 'definition'; sortReverse = !sortReverse">Definition</a></td>
             <td></td>
             <td></td>
-            <!-- <td></td> -->
+            <td></td>
           </tr>
         </thead>
         <tbody class="table-striped" ng-repeat="word in topicShowCtrl.words | orderBy:sortType:sortReverse | filter:searchWords">

@@ -21,11 +21,6 @@ function TopicIndexController($http, $routeParams) {
     }).then(onTopicNewSuccess, onTopicNewError);
   };
 
-  // $http({
-  //   method: 'GET',
-  //   url: '/api/topics/' + id + '/words'
-  // }).then(onWordIndexSuccess, onWordIndexError);
-
   function onTopicIndexSuccess(response) {
     vm.topics = response.data;
   }
@@ -35,19 +30,11 @@ function TopicIndexController($http, $routeParams) {
   }
 
   function onTopicNewSuccess(response) {
-    vm.topics.push(response.data);
+    vm.topics.unshift(response.data);
   }
 
   function onTopicNewError(error) {
     console.log('There was an error creating a topic: ', error);
   }
-
-  // function onWordIndexSuccess(response) {
-  //   console.log(response.data);
-  // }
-  //
-  // function onWordIndexError(error) {
-  //   console.log('There was a word indexing error: ', error);
-  // }
 
 }
