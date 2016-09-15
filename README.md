@@ -3,7 +3,7 @@
 <https://wordstock.herokuapp.com/>
 
 
-A full-stack Rails app that provides a personal dictionary for users based off a chosen topic. Users can create new words to help them organize their learning and remember words more easily.
+1) A full-stack Rails app that provides a personal dictionary for users based off a chosen topic. Users can create new words to help them organize their learning and remember words more easily.
 
 ##### Demo Login Info
 
@@ -18,12 +18,12 @@ Checkout my GitHub [page](https://github.com/mehgellan)
 
 ## Motivation
 
-The purpose of this app is organized vocab accessibility. I wanted to create an app where users could bring their word lists and store them all in one place. For instance, if someone was studying a certain topic or needed to prepare for a project, they could store all those related words under that topic. In this way, a user could review the terms as needed as well as manage the lists they had.
+2) The purpose of this app is organized vocab accessibility. I wanted to create an app where users could bring their word lists and store them all in one place. For instance, if someone was studying a certain topic or needed to prepare for a project, they could store all those related words under that topic. In this way, a user could review the terms as needed as well as manage the lists they had.
 
 ## Code Examples
 #### Using Angular and Rails
 
-In order to use AngularJS as a dynamic client-side framework with RoR on the server-side I had to use rails routes to generate JSON API endpoints.
+(4) In order to use AngularJS as a dynamic client-side framework with RoR on the server-side I had to use rails routes to generate JSON API endpoints.
 
 ```
 # config/routes.rb
@@ -50,6 +50,7 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 
 ## Technologies Used
 
+(3)
 * Ruby 2.3.0, RoR 5.0.0
 * JavaScript ES5, AJAX, AngularJS 1.5.5
 * HTML5/CSS3, Bootstrap 3.2.0
@@ -66,6 +67,8 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 
 ## Angular & Rails - Rangular
 
+(5)
+
 #### PROS
 * Seamless integration with the Rails asset pipeline with the help of various gems.
 * Full-featured framework that comes with data-binding, dependency injection, extensibility, etc.
@@ -79,6 +82,7 @@ All my Angular controllers were stored in a controller directory in my assets/ja
 
 ## Planned Features
 
+(7)
 * Add useful rspec tests to all controllers
 * Integrate into Mobile friendly app
 * Hit Dictionary api for Word of the Day Feature
