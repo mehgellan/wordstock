@@ -1,6 +1,6 @@
 var app = angular.module('wordstock', ['ngRoute', 'templates'])
        .config(config);
-
+// TODO: Clean up unused controllers- there are 7 files but only 4 wired up
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config(  $routeProvider,   $locationProvider  )  {
  $routeProvider

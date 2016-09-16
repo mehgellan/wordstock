@@ -1,4 +1,5 @@
 class Api::SessionsController < ApplicationController
+  # TODO: Remove commented-out code
   # def new
   #   @user = User.new
   #   render json: @user

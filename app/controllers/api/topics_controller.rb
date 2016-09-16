@@ -1,4 +1,5 @@
 class Api::TopicsController < ApplicationController
+  # TODO: Add space between method definitions
   def index
     @topics = Topic.all
     render json: @topics
@@ -37,8 +38,9 @@ class Api::TopicsController < ApplicationController
     end
   end
 
+  # TODO: Remove empty method defintions
   def destroy
-    
+
   end
 
   private

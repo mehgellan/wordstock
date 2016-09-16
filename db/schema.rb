@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160912170657) do
 
   create_table "words", force: :cascade do |t|
     t.string   "term"
+    # TODO: Prefer spelled-out variable names
     t.string   "pos"
     t.string   "definition"
     t.integer  "topic_id"

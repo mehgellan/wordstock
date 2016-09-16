@@ -26,12 +26,15 @@ gem 'bcrypt', '~> 3.1.7'
 # emmet html templating
 gem 'emmett', '~> 0.0.3'
 # ffaker seed Database
+# TODO: You have 'ffaker' included twice in this project
+#       Here, and in the development/test groups below.
 gem 'ffaker'
 # gem to add your Angular templates to the Rails asset pipeline
 gem 'angular-rails-templates'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rubocop'
+gem 'jshint'
 group :production do
   gem 'rails_12factor'
 end
