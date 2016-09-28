@@ -75,7 +75,7 @@ function TopicShowController($http, $routeParams, $window) {
   };
 
   function onTopicShowSuccess(response) {
-    vm.topic = (response.data);
+    vm.topic = response.data;
   }
 
   function onTopicShowError(error) {
