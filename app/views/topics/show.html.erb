@@ -15,6 +15,7 @@
     </tr>
     <tr>
     <% @topic.words.each do |word|  %>
+      <!-- TODO: To make your code even more modular, you could consider making a "word" partial -->
       <%= link_to "Edit Word", edit_word_path(word) %>
       <td><%= link_to "#{word.term}", word_path(word) %></td>
       <td><%= word.pos %></td>
