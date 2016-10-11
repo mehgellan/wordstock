@@ -2,25 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// TODO: Order your CSS selectors from most general to most specific
-
-thead td {
-  font-size: 20px;
-}
 
 thead {
   background-color: lightgrey;
 }
 
-.search-words {
-  margin:0;
-  padding:10px;
+h3 {
+  margin: 0;
+  padding: 10px;
+  padding-left: 20px;
 }
 
-h3 {
-  margin:0;
-  padding:10px;
-  padding-left:20px;
+thead td {
+  font-size: 20px;
+}
+
+.search-words {
+  margin: 0;
+  padding: 10px;
 }
 
 .panel {
@@ -28,27 +27,12 @@ h3 {
 }
 
 .topic-header {
-  display:inline-block;
+  display: inline-block;
   padding: 5px;
 }
 
 .editForm {
   margin: 10px 0;
-}
-
-.editForm input[type="text"] {
-  font-size:48px;
-  padding: 30px;
-  border:none;
-  border-bottom: 1px solid grey;
-}
-
-.editForm button {
-  margin:0;
-}
-
-.topics-back a {
-  text-decoration: none;
 }
 
 .glyphicon-trash {
@@ -60,9 +44,24 @@ h3 {
 }
 
 .new-topic {
-  width:100%;
+  width: 100%;
   border: none;
-  border-bottom:1px solid grey;
+  border-bottom: 1px solid grey;
   font-size: 48px;
   text-align: center;
+}
+
+.topics-back a {
+  text-decoration: none;
+}
+
+.editForm button {
+  margin:0;
+}
+
+.editForm input[type="text"] {
+  font-size:48px;
+  padding: 30px;
+  border: none;
+  border-bottom: 1px solid grey;
 }

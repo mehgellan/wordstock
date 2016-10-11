@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.createForm').click(function() {
+  $('form').click(function() {
     $('.text-input').val('');
   });
 });

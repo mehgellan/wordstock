@@ -16,7 +16,7 @@
     <div class="navbar navbar-default">
       <nav>
         <ul class="nav nav-pills">
-          <li role="presentation" class="active"><%= link_to "Home", root_path %></li>
+          <li role="presentation"><%= link_to "Home", root_path %></li>
           <% if current_user %>
             <li role="presentation" class="nav-link">
               <a href="/users/<%= current_user.id %>">Profile</a>
@@ -33,7 +33,7 @@
             </li>
           <% end %>
           <div class="logo pull-right">
-            <img src="http://i.imgur.com/jKG0BJh.png">
+            <%= image_tag 'logo-orange.png', id: 'logo' %>
           </div>
           <li class="logo-text pull-right">WORDSTOCK</li>
         </ul>

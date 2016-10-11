@@ -26,8 +26,6 @@ gem 'bcrypt', '~> 3.1.7'
 # emmet html templating
 gem 'emmett', '~> 0.0.3'
 # ffaker seed Database
-# TODO: You have 'ffaker' included twice in this project
-#       Here, and in the development/test groups below.
 gem 'ffaker'
 # gem to add your Angular templates to the Rails asset pipeline
 gem 'angular-rails-templates'
@@ -43,7 +41,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'spring'

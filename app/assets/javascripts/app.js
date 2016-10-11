@@ -24,6 +24,11 @@ function config(  $routeProvider,   $locationProvider  )  {
       controller: 'WordsShowController',
       controllerAs: 'wordsShowCtrl'
     })
+    .when('/users/:id', {
+      templateUrl: 'users/show.html',
+      controller: 'UserShowController',
+      controllerAs: 'userShowCtrl'
+    })
   //  .otherwise({
   //    redirectTo: '/'
   //  });

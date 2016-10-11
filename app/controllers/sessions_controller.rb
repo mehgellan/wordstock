@@ -5,8 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # TODO: Use == for conditionals. = is assigment
-    if @user = User.confirm(user_params)
+    if @user == User.confirm(user_params)
       flash[:notice] = "Successfully logged in, welcome #{@user.first_name}!"
       login(@user)
       redirect_to user_path(@user)
