@@ -1,6 +1,6 @@
 var app = angular.module('wordstock', ['ngRoute', 'templates'])
        .config(config);
-
+// TODO: Clean up unused controllers- there are 7 files but only 4 wired up
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config(  $routeProvider,   $locationProvider  )  {
  $routeProvider
@@ -23,6 +23,11 @@ function config(  $routeProvider,   $locationProvider  )  {
       templateUrl: 'words/show.html',
       controller: 'WordsShowController',
       controllerAs: 'wordsShowCtrl'
+    })
+    .when('/users/:id', {
+      templateUrl: 'users/show.html',
+      controller: 'UserShowController',
+      controllerAs: 'userShowCtrl'
     })
   //  .otherwise({
   //    redirectTo: '/'

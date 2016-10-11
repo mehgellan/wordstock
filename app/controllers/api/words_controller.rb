@@ -45,7 +45,7 @@ class Api::WordsController < ApplicationController
   def destroy
     @word = Word.find_by_id(params[:id])
     @word.destroy
-    flash[:success] = @word.term + "has been deleted!"
+    flash[:success] = '#{@word.term} has been deleted!'
     render json: @word
   end
 

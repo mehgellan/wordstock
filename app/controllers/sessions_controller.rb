@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user = User.confirm(user_params)
+    if @user == User.confirm(user_params)
       flash[:notice] = "Successfully logged in, welcome #{@user.first_name}!"
       login(@user)
       redirect_to user_path(@user)

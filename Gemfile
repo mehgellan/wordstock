@@ -31,7 +31,8 @@ gem 'ffaker'
 gem 'angular-rails-templates'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'rubocop'
+gem 'jshint'
 group :production do
   gem 'rails_12factor'
 end
@@ -40,7 +41,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'spring'

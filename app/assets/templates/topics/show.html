@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
     <div>
+      <!-- TODO: Just write topic.name. The controller is already wired up in your router -->
+      <!-- XXX: when I change it to topic.name the title no longer shoes up -->
       <h1 ng-hide="editing" class="topic-header">{{ topicShowCtrl.topic.name }}</h1>
       <div class="editForm">
         <input ng-show="editing" id="nameEdit" ng-model="topicShowCtrl.topic.name" type="text" class="form-control input-md">

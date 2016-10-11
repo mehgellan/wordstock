@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+nav a {
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.logo-text {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 10px;
+}
+
+#logo {
+  margin: 5px 20px 5px 5px;
+  height: 40px;
+  width: 30px;;
+}
